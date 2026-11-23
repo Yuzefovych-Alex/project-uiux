@@ -4,7 +4,7 @@
 
 html {
   min-width: 320px;
-  background: #171a20;
+  background: #f4f7fb;
 }
 
 body {
@@ -25,9 +25,24 @@ select {
   font: inherit;
 }
 
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 button:focus-visible,
 input:focus-visible,
 select:focus-visible {
   outline: 3px solid rgba(52, 120, 246, 0.4);
   outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

@@ -1,6 +1,6 @@
 import './Doctor.css';
 
-function Doctor({ doctors, searchTerm, setSearchTerm, selectedDoctorId, setSelectedDoctorId, onContinue }) {
+function Doctor({ doctors, searchTerm, setSearchTerm, selectedDoctorId, setSelectedDoctorId }) {
   return (
     <div className="panel doctor-panel">
       <h2 className="panel__title">Choose a doctor</h2>
@@ -46,9 +46,6 @@ function Doctor({ doctors, searchTerm, setSearchTerm, selectedDoctorId, setSelec
         <p className="doctor-empty" role="status">No doctors match that search. Try another name or specialty.</p>
       )}
 
-      <button type="button" className="panel__button" onClick={onContinue} disabled={doctors.length === 0}>
-        Continue
-      </button>
     </div>
   );
 }

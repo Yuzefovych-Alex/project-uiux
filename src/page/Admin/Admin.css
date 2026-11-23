@@ -1,0 +1,435 @@
+.admin-shell {
+  min-height: 100vh;
+  padding: clamp(20px, 5vw, 56px) 24px;
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(208, 228, 255, 0.66), transparent 34rem),
+    #f4f7fb;
+}
+
+.admin-layout {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 46px;
+}
+
+.admin-text-button:hover {
+  color: #1d5bd8;
+}
+
+.admin-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.admin-heading h1 {
+  margin: 0;
+  color: #15233b;
+  font-size: clamp(1.8rem, 4vw, 2.45rem);
+  letter-spacing: -0.045em;
+}
+
+.admin-heading p:last-child {
+  margin: 8px 0 0;
+  color: #78869a;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  border-bottom: 1px solid #dfe6ef;
+  margin-bottom: 18px;
+}
+
+.admin-tab {
+  flex-shrink: 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  padding: 13px 16px;
+  color: #778398;
+  font: inherit;
+  font-size: 0.91rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.admin-tab:hover {
+  color: #24416c;
+}
+
+.admin-tab--active {
+  border-bottom-color: #2563eb;
+  color: #1c55bd;
+}
+
+.admin-content {
+  min-height: 390px;
+  border: 1px solid #e8edf4;
+  border-radius: 20px;
+  background: #fff;
+  padding: clamp(20px, 3.5vw, 34px);
+  box-shadow: 0 16px 45px rgba(31, 52, 86, 0.06);
+}
+
+.admin-section-title {
+  margin: 0 0 8px;
+  color: #15233b;
+  font-size: 1.35rem;
+  letter-spacing: -0.025em;
+}
+
+.admin-section-description {
+  margin: 0 0 22px;
+  color: #7a8799;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 22px 0 34px;
+}
+
+.admin-stat {
+  display: flex;
+  min-height: 126px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border: 1px solid #e7edf5;
+  border-radius: 16px;
+  background: #f9fbfe;
+  padding: 18px;
+}
+
+.admin-stat__label,
+.admin-stat__detail {
+  color: #7a8799;
+  font-size: 0.84rem;
+}
+
+.admin-stat strong {
+  margin: 5px 0 2px;
+  color: #15233b;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.admin-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.admin-section-heading h3,
+.admin-schedule-heading h3 {
+  margin: 0;
+  color: #15233b;
+  font-size: 1.04rem;
+}
+
+.admin-text-button {
+  border: 0;
+  background: transparent;
+  color: #2563eb;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-doctor-form {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr auto;
+  align-items: end;
+  gap: 12px;
+  border: 1px solid #e7edf5;
+  border-radius: 16px;
+  background: #f9fbfe;
+  padding: 16px;
+}
+
+.admin-doctor-form label,
+.admin-doctor-select {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+  color: #526174;
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.admin-doctor-form input,
+.admin-doctor-select select {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid #dfe6ef;
+  border-radius: 11px;
+  background: #fff;
+  padding: 10px 12px;
+  color: #15233b;
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.admin-primary-button {
+  min-height: 46px;
+  border: 0;
+  border-radius: 11px;
+  background: #2563eb;
+  padding: 0 17px;
+  color: #fff;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.admin-primary-button:hover {
+  background: #1d5bd8;
+}
+
+.admin-doctor-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.admin-doctor-card {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e7edf5;
+  border-radius: 14px;
+  padding: 13px;
+}
+
+.admin-doctor-card__avatar {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border-radius: 13px;
+  background: #e4efff;
+  color: #1c63d8;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.admin-doctor-card__info {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-doctor-card__info strong,
+.admin-doctor-card__info span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-doctor-card__info strong {
+  color: #15233b;
+  font-size: 0.9rem;
+}
+
+.admin-doctor-card__info span,
+.admin-doctor-card__count {
+  color: #7a8799;
+  font-size: 0.76rem;
+}
+
+.admin-doctor-card__count {
+  flex-shrink: 0;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #e7edf5;
+  border-radius: 14px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th {
+  background: #f8fafd;
+  color: #7a8799;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.admin-table th,
+.admin-table td {
+  min-width: 120px;
+  border-bottom: 1px solid #edf1f6;
+  padding: 14px 16px;
+  vertical-align: top;
+}
+
+.admin-table td {
+  color: #334158;
+  font-size: 0.87rem;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-table td strong,
+.admin-table__sub {
+  display: block;
+}
+
+.admin-table td strong {
+  color: #15233b;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.admin-table__sub {
+  margin-top: 4px;
+  color: #8793a4;
+  font-size: 0.78rem;
+}
+
+.admin-empty {
+  margin: 0;
+  border: 1px dashed #dce4ef;
+  border-radius: 14px;
+  padding: 32px 18px;
+  color: #7a8799;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.admin-doctor-select {
+  width: min(420px, 100%);
+  margin: 20px 0 24px;
+}
+
+.admin-schedule-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border-bottom: 1px solid #edf1f6;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+}
+
+.admin-schedule-heading p {
+  margin: 5px 0 0;
+  color: #7a8799;
+  font-size: 0.83rem;
+}
+
+.admin-schedule-heading > span {
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: #edf3fb;
+  padding: 7px 10px;
+  color: #526174;
+  font-size: 0.77rem;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .admin-shell {
+    padding: 18px 16px 30px;
+  }
+
+  .admin-header {
+    margin-bottom: 34px;
+  }
+
+  .admin-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .admin-stats {
+    gap: 8px;
+  }
+
+  .admin-stat {
+    min-height: 110px;
+    padding: 12px;
+  }
+
+  .admin-stat strong {
+    font-size: 1.55rem;
+  }
+
+  .admin-stat__label,
+  .admin-stat__detail {
+    font-size: 0.72rem;
+  }
+
+  .admin-doctor-form {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-doctor-list {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-doctor-card__count {
+    max-width: 66px;
+    text-align: right;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .admin-header {
+    gap: 10px;
+  }
+
+  .admin-tabs {
+    margin-right: -16px;
+    padding-right: 16px;
+  }
+
+  .admin-tab {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 0.82rem;
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+}

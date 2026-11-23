@@ -1,23 +1,23 @@
 .waiting-panel {
-  min-height: 580px;
+  min-height: 490px;
 }
 
 .waiting-header {
   align-self: flex-start;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
   border-radius: 20px;
-  background: #edf0f4;
-  padding: 6px 10px;
+  background: #edf3fb;
+  padding: 8px 13px;
   color: #647083;
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.84rem;
+  font-weight: 650;
 }
 
 .waiting-list {
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 7px;
+  gap: 9px;
   overflow-y: auto;
   margin: 0 0 14px;
   padding: 0 2px 0 0;
@@ -28,14 +28,14 @@
 
 .waiting-item {
   display: flex;
-  min-height: 38px;
+  min-height: 50px;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 12px;
   border: 1px solid #e6eaf0;
-  border-radius: 12px;
+  border-radius: 14px;
   background: #fff;
-  padding: 7px 10px;
+  padding: 9px 14px;
   color: #263248;
   transition: background 0.2s ease, border-color 0.2s ease;
 }
@@ -50,14 +50,14 @@
   display: flex;
   min-width: 0;
   align-items: center;
-  gap: 9px;
+  gap: 12px;
 }
 
 .waiting-item__index {
-  width: 20px;
+  width: 26px;
   flex-shrink: 0;
   color: #8a95a6;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 700;
   text-align: center;
 }
@@ -66,10 +66,10 @@
   display: flex;
   min-width: 0;
   align-items: center;
-  gap: 7px;
+  gap: 9px;
   overflow: hidden;
   color: #3a4659;
-  font-size: 0.79rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -85,23 +85,23 @@
   flex-shrink: 0;
   border-radius: 20px;
   background: #d7e8ff;
-  padding: 3px 7px;
+  padding: 4px 8px;
   color: #1c63d8;
-  font-size: 0.61rem;
+  font-size: 0.7rem;
   font-weight: 700;
 }
 
 .waiting-item__time {
-  min-width: 40px;
+  min-width: 48px;
   flex-shrink: 0;
   color: #7a8799;
-  font-size: 0.72rem;
+  font-size: 0.84rem;
   font-weight: 650;
   text-align: right;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   .waiting-panel {
-    min-height: min(580px, calc(100dvh - 40px));
+    min-height: 0;
   }
 }

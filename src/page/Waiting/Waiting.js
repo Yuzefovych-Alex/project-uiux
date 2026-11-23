@@ -1,6 +1,6 @@
 import './Waiting.css';
 
-function WaitingCard({ patients, selectedDoctor, date, onContinue }) {
+function WaitingCard({ patients, selectedDoctor, date }) {
   const [year, month, day] = date.split('-');
   const doctorLastName = selectedDoctor.name.split(' ').pop();
 
@@ -30,7 +30,6 @@ function WaitingCard({ patients, selectedDoctor, date, onContinue }) {
         ))}
       </ul>
 
-      <button type="button" className="panel__button" onClick={onContinue}>Done</button>
     </div>
   );
 }

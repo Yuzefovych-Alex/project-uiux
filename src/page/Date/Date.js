@@ -10,7 +10,7 @@ function dateKey(date) {
   return `${year}-${month}-${day}`;
 }
 
-function DateCard({ selectedDate, setSelectedDate, selectedTime, setSelectedTime, timeSlots, onContinue }) {
+function DateCard({ selectedDate, setSelectedDate, selectedTime, setSelectedTime, timeSlots }) {
   const [viewedMonth, setViewedMonth] = useState(() => {
     const [year, month] = selectedDate.split('-').map(Number);
     return new Date(year, month - 1, 1);
@@ -54,43 +54,45 @@ function DateCard({ selectedDate, setSelectedDate, selectedTime, setSelectedTime
         </div>
       </div>
 
-      <div className="calendar-weekdays" aria-hidden="true">
-        {weekdays.map((day) => <span key={day}>{day}</span>)}
+      <div className="date-content">
+        <div className="date-calendar">
+          <div className="calendar-weekdays" aria-hidden="true">
+            {weekdays.map((day) => <span key={day}>{day}</span>)}
+          </div>
+
+          <div className="calendar-grid" role="group" aria-label={monthLabel}>
+            {Array.from({ length: cellCount }, (_, index) => {
+              const dayNumber = index - offset + 1;
+              const date = new Date(viewedMonth.getFullYear(), viewedMonth.getMonth(), dayNumber);
+              const inMonth = date.getMonth() === viewedMonth.getMonth();
+              const key = dateKey(date);
+              const isSelected = key === selectedDate;
+              const isPast = date < today;
+
+              return (
+                <button
+                  key={key}
+                  type="button"
+                  className={`calendar-day ${isSelected ? 'calendar-day--selected' : ''} ${!inMonth ? 'calendar-day--muted' : ''}`}
+                  onClick={() => setSelectedDate(key)}
+                  disabled={!inMonth || isPast}
+                  aria-pressed={isSelected}
+                  aria-label={date.toLocaleDateString('en-US', { dateStyle: 'full' })}
+                >
+                  {date.getDate()}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <label className="time-picker">
+          <span className="time-picker__label">Available time</span>
+          <select value={selectedTime} onChange={(event) => setSelectedTime(event.target.value)}>
+            {timeSlots.map((slot) => <option key={slot} value={slot}>{slot}</option>)}
+          </select>
+        </label>
       </div>
-
-      <div className="calendar-grid" role="group" aria-label={monthLabel}>
-        {Array.from({ length: cellCount }, (_, index) => {
-          const dayNumber = index - offset + 1;
-          const date = new Date(viewedMonth.getFullYear(), viewedMonth.getMonth(), dayNumber);
-          const inMonth = date.getMonth() === viewedMonth.getMonth();
-          const key = dateKey(date);
-          const isSelected = key === selectedDate;
-          const isPast = date < today;
-
-          return (
-            <button
-              key={key}
-              type="button"
-              className={`calendar-day ${isSelected ? 'calendar-day--selected' : ''} ${!inMonth ? 'calendar-day--muted' : ''}`}
-              onClick={() => setSelectedDate(key)}
-              disabled={!inMonth || isPast}
-              aria-pressed={isSelected}
-              aria-label={date.toLocaleDateString('en-US', { dateStyle: 'full' })}
-            >
-              {date.getDate()}
-            </button>
-          );
-        })}
-      </div>
-
-      <label className="time-picker">
-        <span className="time-picker__label">Available time</span>
-        <select value={selectedTime} onChange={(event) => setSelectedTime(event.target.value)}>
-          {timeSlots.map((slot) => <option key={slot} value={slot}>{slot}</option>)}
-        </select>
-      </label>
-
-      <button type="button" className="panel__button" onClick={onContinue}>Continue</button>
     </div>
   );
 }

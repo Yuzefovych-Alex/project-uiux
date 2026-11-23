@@ -17,7 +17,7 @@ function Contact({ values, onChange, onContinue }) {
     <div className="panel contact-panel">
       <h2 className="panel__title">Contact details</h2>
 
-      <form className="contact-form" onSubmit={submitContact}>
+      <form id="contact-form" className="contact-form" onSubmit={submitContact}>
         <div className="contact-fields">
           {fields.map((field) => (
             <label key={field.key} className="field-row">
@@ -36,7 +36,6 @@ function Contact({ values, onChange, onContinue }) {
           ))}
         </div>
 
-        <button type="submit" className="panel__button">Continue</button>
       </form>
     </div>
   );
